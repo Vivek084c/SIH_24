@@ -1,36 +1,30 @@
-# import sys
-# import json
-# import ast
-
-# # data_to_pass_back = "Send this to node process."
-# # input = ast.literal_eval(sys.argv[1])
-# # output = input
-# # output.append(data_to_pass_back)
-# # print(json.dump(output))
-
-# # sys.stdout.flush()
-
-# data_to_pass_back = "vivek this to node process."
-# input = sys.argv[1]
-# output = data_to_pass_back
-# print(output)
-# sys.stdout.flush()
+import sys
+import json
+import ast
 
 
+data_to_pass_back = "vivek this to node process."
+input = sys.argv[1]
+
+
+
+# model code
 import google.generativeai as genai
 import os
+# import key
 import PIL.Image
 
 
-# importing the custom module
+from dotenv import load_dotenv
+load_dotenv()
 
-from utils.google_utils import getApiKey
+os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY")
+genai.configure(api_key=os.environ['GOOGLE_API_KEY'])
 
+model = genai.GenerativeModel('gemini-1.0-pro')
 
+response=model.generate_content(f" {input}")
 
-#accessing the api key
-google_api_key = getApiKey()
-
-
-
-
+output = response.text
+print(output)
+sys.stdout.flush()
