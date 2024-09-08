@@ -1,17 +1,36 @@
-import sys
-import json
-import ast
+# import sys
+# import json
+# import ast
 
-# data_to_pass_back = "Send this to node process."
-# input = ast.literal_eval(sys.argv[1])
-# output = input
-# output.append(data_to_pass_back)
-# print(json.dump(output))
+# # data_to_pass_back = "Send this to node process."
+# # input = ast.literal_eval(sys.argv[1])
+# # output = input
+# # output.append(data_to_pass_back)
+# # print(json.dump(output))
 
+# # sys.stdout.flush()
+
+# data_to_pass_back = "vivek this to node process."
+# input = sys.argv[1]
+# output = data_to_pass_back
+# print(output)
 # sys.stdout.flush()
 
-data_to_pass_back = "vivek this to node process."
-input = sys.argv[1]
-output = data_to_pass_back
-print(output)
-sys.stdout.flush()
+
+import google.generativeai as genai
+import os
+import PIL.Image
+
+
+# importing the custom module
+
+from utils.google_utils import getApiKey
+
+
+
+#accessing the api key
+google_api_key = getApiKey()
+
+
+
+

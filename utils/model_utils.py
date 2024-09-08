@@ -11,8 +11,7 @@ def getApiKey():
     Return:
         api_key
     """
-    api_key = os.getenv("HUGGINGFACEHUB_API_TOKEN")
-    print(f"the api key is {api_key}")
+    api_key = os.getenv("GOOGLE_API_KEY")
     return api_key
 
 def load_model(api_key, temperature=0.2, max_token=30):
@@ -29,3 +28,6 @@ def load_model(api_key, temperature=0.2, max_token=30):
     conversation_model = HuggingFaceHub(huggingfacehub_api_token =api_key, repo_id = modelid, model_kwargs={"temperature":temperature, "max_new_tokens":max_token})
 
     return conversation_model
+
+
+def load_model(model_name)
