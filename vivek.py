@@ -17,8 +17,8 @@ input = sys.argv[1]
 
 #### configuring the model
 #configuring the api key
-os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY")
-genai.configure(api_key=os.environ['GOOGLE_API_KEY'])
+
+genai.configure(api_key="AIzaSyBZVBw7t3ZQlbS_VtHOcWHoNX8NDatuMf0")
 #configuring the model
 model = genai.GenerativeModel('gemini-1.0-pro')
 
