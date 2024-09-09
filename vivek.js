@@ -1,7 +1,7 @@
 const spawner = require('child_process').spawn;
 
 // string
-const data_to_pass_in = "what is machine learning, explain in 50 words";
+const data_to_pass_in = "introduce yourself and team member along with their contribution";
 
 console.log("data send to python script:" , data_to_pass_in);
 
